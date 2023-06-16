@@ -1,13 +1,16 @@
+// Segment Tree is a data Structure which allows to perform range queries and point updates in O(log(n)) time.
+
+
 #include <bits/stdc++.h>
 using namespace std;
  
  
  
-typedef long long int ll;
+typedef long long int ll;                   // Some macros
 typedef vector<ll> vl;
 
 
-struct item{
+struct item{                        // Can use to store mutliple values in a node of the segment tree
     ll sum;
 };
 
@@ -19,12 +22,12 @@ struct SegTree{
 
 
     // Utility functions   to be definitely changed as per needs
-    item NEUTRAL_ELEMENT = {0};
-    item single(ll a){
+    item NEUTRAL_ELEMENT = {0};             // Set non-interfering value for the required operation
+    item single(ll a){                      // If there is a single element in the array
         return {a};
     }
 
-    item merge(item a1, item a2){
+    item merge(item a1, item a2){           // Operation that you want in the segment tree
         return {a1.sum + a2.sum};
     }
 
@@ -32,14 +35,14 @@ struct SegTree{
 
 
 
-    void init(ll n){
+    void init(ll n){                        // Initialising the segment-tree with size 2*2^ceil(log2(n)) - 1
         size = 1;
         while(size < n) size *= 2;
         tree.resize(2*size);                 //Initial value 
     }
 
-    void build(vl &a, ll x, ll lx, ll rx){
-        if(rx - lx == 1){
+    void build(vl &a, ll x, ll lx, ll rx){          // If you build the segment tree with some initial values
+        if(rx - lx == 1){                           // It's time complexity is O(n).
             if(lx < a.size()){
                 tree[x] = single(a[lx]);
             }
@@ -57,12 +60,12 @@ struct SegTree{
     }
 
 
-    void set(ll i, ll v, ll x, ll lx, ll rx){               // 0 based - indexing
-        if(rx - lx == 1) {
-            tree[x] = single(v);  
-            return;
-        }
-        ll mid = (lx + rx) >> 1;
+    void set(ll i, ll v, ll x, ll lx, ll rx){               // i is the index to be updated, v is the value to be updated
+        if(rx - lx == 1) {                              //  x is the index of the segment Tree we are considering right now, 
+            tree[x] = single(v);                        // lx, rx and the right and the left index of the segment of the array
+            return;                                     // We always start x with 0 as 0 is the index of root of the segment tree
+        }                                               // Note: Segment tree is a binary-tree stored in an array. Children of x are 2*x + 1, 2*x + 2. Kindof like heap.
+        ll mid = (lx + rx) >> 1;                        // So, we are updating those index of segment tree which contains the ith index
         if(i < mid){
             set(i, v, 2*x+1, lx, mid);
         }
@@ -72,8 +75,8 @@ struct SegTree{
 
 
 
-    void set(ll i, ll v){
-        set(i, v, 0, 0, size);
+    void set(ll i, ll v){                               // 0 based - indexing
+        set(i, v, 0, 0, size);                          // O(log n) time complexity
     }
 
 
@@ -89,14 +92,12 @@ struct SegTree{
 
 
 
-    item query(ll l, ll r) {return query(l, r, 0, 0, size);}                // r is not included in the range
+    item query(ll l, ll r) {return query(l, r, 0, 0, size);}                // r is not included in the range, O(log n) time complexity
 };
 
 
  
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(nullptr); cout.tie(nullptr);
     cout<<"Enter the length of the array of numbers"<<endl;
     ll n;
     cin>>n;
