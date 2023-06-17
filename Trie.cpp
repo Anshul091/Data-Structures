@@ -86,9 +86,9 @@ class Trie{
                 flag = 1;
             }
             for(int i = order.size() - 1; i>=1; i--){           // Now, delete the strings 
-                if(deletable(order[i])){                        // So, we start from the bottom of the deleted node and 
+                if(deletable(order[i])){                        // So, we start from the bottom of the deleted node and reversely delete the nodes if there no endofword in it's subtree.
                     delete order[i];
-                    order[i - 1]->children[s[i - 1]] = NULL;
+                    order[i - 1]->children[s[i - 1]] = NULL;     // Initialising it with NULL; to avoid dangling pointers and segmentation faults.
                 }
                 else break;
             }
