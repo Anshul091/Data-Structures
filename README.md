@@ -9,6 +9,8 @@ This project contains implementations of various data structures in C++. The dat
 - Sparse Table
 - DSU
 
+I'll be adding certain algorithms too. Later on.
+
 ## Getting Started
 
 To use these data structures in your own projects, simply include the appropriate header file(s) in your code. For example, to use the Treap data structure, include the `treap.h` header file:
