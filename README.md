@@ -92,6 +92,9 @@ The DSU data structure supports the following operations:
 - Find the root of a set
 
 <img width="518" alt="Screenshot 2023-07-11 at 4 23 51 AM" src="https://github.com/Anshul091/Data-Structures/assets/112956069/de13b536-4de7-46ec-9549-5f54992b6e70">
+
+
+
 ## Contributing
 
 If you would like to contribute to this project, please feel free to submit a pull request!
