@@ -1,5 +1,8 @@
 # Data-Structures
  Data Structures in C++
+ 
+ <img width="517" alt="Screenshot 2023-07-11 at 4 22 34 AM" src="https://github.com/Anshul091/Data-Structures/assets/112956069/10c21eda-5a68-4fa2-844f-3c32750b2fad">
+
 
 This project contains implementations of various data structures in C++. The data structures currently implemented are:
 
@@ -12,6 +15,7 @@ This project contains implementations of various data structures in C++. The dat
 I'll be adding certain algorithms too. Later on.
 
 ## Getting Started
+<img width="521" alt="Screenshot 2023-07-11 at 4 23 15 AM" src="https://github.com/Anshul091/Data-Structures/assets/112956069/9d2e3a46-13ed-4cb1-a439-d88c4b8a5abe">
 
 To use these data structures in your own projects, simply include the appropriate header file(s) in your code. For example, to use the Treap data structure, include the `treap.h` header file:
 
@@ -87,6 +91,7 @@ The DSU data structure supports the following operations:
 - Union two sets
 - Find the root of a set
 
+<img width="518" alt="Screenshot 2023-07-11 at 4 23 51 AM" src="https://github.com/Anshul091/Data-Structures/assets/112956069/de13b536-4de7-46ec-9549-5f54992b6e70">
 ## Contributing
 
 If you would like to contribute to this project, please feel free to submit a pull request!
